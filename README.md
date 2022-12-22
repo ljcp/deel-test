@@ -7,9 +7,9 @@ Swagger UI live link: https://deel-test.onrender.com/api-docs/
 2. improve code structure
     separate the code on controllers into services so code become more reusable , example what if we want to use same logic for MQTT endpoint instead of only express 
 3. finish all tests 
-4. replace SQLite with a more performant DB that supports multiple transactions with Sequelize
+4. replace SQLite with a more performant DB that supports multiple transactions with Sequelize [SQLite does not support more than one transaction at the same time.](https://sequelize.org/docs/v6/other-topics/transactions/)
 
-Thank for your time!
+Thank you for your time!
 
 
 # DEEL BACKEND TASK
