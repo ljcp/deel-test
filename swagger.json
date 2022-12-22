@@ -5,7 +5,7 @@
         "description": "This is the API documentation for deel test",
         "version": "1.0.0"
     },
-    "host": "https://deel-test.onrender.com",
+    "host": "deel-test.onrender.com",
     "basePath": "/",
     "schemes": [
         "http"
