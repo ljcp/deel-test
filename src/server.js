@@ -3,8 +3,9 @@ const app = require('./app');
 init();
 
 async function init() {
+  const port = process.env.PORT || 3001;
   try {
-    app.listen(3001, () => {
+    app.listen(port, () => {
       console.log('Express App Listening on Port 3001');
     });
   } catch (error) {
