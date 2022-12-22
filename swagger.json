@@ -1,0 +1,213 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API documentation",
+        "description": "This is the API documentation for deel test",
+        "version": "1.0.0"
+    },
+    "host": "localhost:3001",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/contracts/{id}": {
+            "get": {
+                "tags": [
+                    "contracts"
+                ],
+                "summary": "Get a single contract by ID",
+                "description": "Retrieves a contract by its ID from the database",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the contract to retrieve",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "profile_id",
+                        "in": "header",
+                        "description": "ID of the user's profile",
+                        "required": true,
+                        "type": "integer",
+                        "default": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved the contract"
+                    },
+                    "404": {
+                        "description": "Contract with the specified ID was not found"
+                    }
+                }
+            }
+        },
+        "/contracts": {
+            "get": {
+                "tags": [
+                    "contracts"
+                ],
+                "summary": "Get all contracts",
+                "description": "Retrieves all contracts from the database",
+                "parameters": [
+                    {
+                        "name": "profile_id",
+                        "in": "header",
+                        "description": "ID of the user's profile",
+                        "required": true,
+                        "type": "integer",
+                        "default": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved all contracts"
+                    }
+                }
+            }
+        },
+        "/jobs/unpaid": {
+            "get": {
+                "tags": [
+                    "jobs"
+                ],
+                "summary": "Get all unpaid jobs",
+                "description": "Retrieves all unpaid jobs from the database",
+                "parameters": [
+                    {
+                        "name": "profile_id",
+                        "in": "header",
+                        "description": "ID of the user's profile",
+                        "required": true,
+                        "type": "integer",
+                        "default": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved all unpaid jobs"
+                    }
+                }
+            }
+        },
+        "/jobs/{job_id}/pay": {
+            "post": {
+                "tags": [
+                    "jobs"
+                ],
+                "summary": "Mark a job as paid",
+                "description": "Marks a job as paid in the database",
+                "parameters": [
+                    {
+                        "name": "job_id",
+                        "in": "path",
+                        "description": "ID of the job to mark as paid",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "profile_id",
+                        "in": "header",
+                        "description": "ID of the user's profile",
+                        "required": true,
+                        "type": "integer",
+                        "default": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully marked the job as paid"
+                    },
+                    "404": {
+                        "description": "Job with the specified ID was not found"
+                    }
+                }
+            }
+        },
+        "/balances/deposit/{userId}": {
+            "post": {
+                "tags": [
+                    "balances"
+                ],
+                "summary": "Deposit funds into a user's balance",
+                "description": "Adds funds to a user's balance in thedatabase",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "ID of the user to deposit funds into",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "profile_id",
+                        "in": "header",
+                        "description": "ID of the user's profile",
+                        "required": true,
+                        "type": "integer",
+                        "default": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully deposited funds into the user's balance"
+                    },
+                    "404": {
+                        "description": "User with the specified ID was not found"
+                    }
+                }
+            }
+        },
+        "/admin/best-profession": {
+            "get": {
+                "tags": [
+                    "admin"
+                ],
+                "summary": "Get the best performing profession",
+                "description": "Retrieves the profession with the most successful contracts from the database",
+                "parameters": [
+                    {
+                        "name": "profile_id",
+                        "in": "header",
+                        "description": "ID of the user's profile",
+                        "required": true,
+                        "type": "integer",
+                        "default": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved the best performing profession"
+                    }
+                }
+            }
+        },
+        "/admin/best-client": {
+            "get": {
+                "tags": [
+                    "admin"
+                ],
+                "summary": "Get the best performing client",
+                "description": "Retrieves the client with the most successful contracts from the database",
+                "parameters": [
+                    {
+                        "name": "profile_id",
+                        "in": "header",
+                        "description": "ID of the user's profile",
+                        "required": true,
+                        "type": "integer",
+                        "default": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved the best performing client"
+                    }
+                }
+            }
+        }
+    }
+}
