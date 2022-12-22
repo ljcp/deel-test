@@ -8,7 +8,7 @@
     "host": "deel-test.onrender.com",
     "basePath": "/",
     "schemes": [
-        "http"
+        "https"
     ],
     "paths": {
         "/contracts/{id}": {
